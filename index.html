@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Sekai</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"> <!-- Bootstrap Icons -->
+  <script src="script.js" defer></script>
+
+  </head>
+
+ 
+
+  <!-- Load OpenStreetMap (Leaflet) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <!-- Load Google Maps API -->
+  <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initGoogleMap">
+  </script>
+</head>
+<body>
+
+ <!-- HEADER -->
+ <header>
+  <div class="logo">
+    <h1>My Sekai</h1>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">My Sekai</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html"><i class="bi bi-images"></i> Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="news.html"><i class="bi bi-newspaper"></i> News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="forms.html"><i class="bi bi-info-circle-fill"></i> Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="table.html"><i class="bi bi-table"></i> Table</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+</header>
+
+  <!-- Carousel -->
+  <section id="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <img src="images/pp.jpg" alt="Image 1">
+        <img src="images/rr.png" alt="Image 2">
+        <img src="images/ss.jpeg" alt="Image 3">
+      </div>
+      <!-- Navigation Buttons -->
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- API Sections (Weather, Facebook, YouTube, Maps) -->
+  <div class="api-sections">
+    <!-- Weather API Section -->
+    <section id="weather" class="api-section">
+      <h3>Current Weather in Tokyo</h3>
+      <div class="weather-info" id="weather-info">
+        <p>Loading weather...</p>
+      </div>
+    </section>
+
+    <!-- Facebook Page Plugin -->
+    <section id="facebook-share" class="api-section">
+      <h3>Check out our Facebook Page</h3>
+      <div class="fb-page" 
+           data-href="https://www.facebook.com/ColorfulStageEN"
+           data-width="380" 
+           data-hide-cover="false" 
+           data-show-facepile="true">
+      </div>
+    </section>
+
+    <!-- YouTube Embedded Video -->
+    <section id="youtube-share" class="api-section">
+      <h3>Check out our cool videos</h3>
+      <div class="youtube-video">
+        <iframe 
+                src="https://www.youtube.com/embed/9TgTm-7N6JE" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+  </div>
+
+  <!-- Maps Section (Google Maps & OpenStreetMap) -->
+  <div class="api-sections">
+    <!-- OpenStreetMap (Leaflet) -->
+    <section id="leaflet-map-section" class="api-section">
+      <h3>Tokyo Location (OpenStreetMap)</h3>
+      <div id="leaflet-map" style="width: 100%; height: 300px;"></div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
+    <p>&copy; 2025 My Sekai. All rights reserved.</p>
+  </footer>
+
+  <!-- Facebook SDK (Ensures Proper Loading) -->
+  <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            xfbml: true,
+            version: 'v12.0'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Bootstrap JavaScript (For Navbar Toggling) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+header nav ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* GALLERY PAGE STYLES */
+#gallery {
+  padding: 40px;
+  text-align: center;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(160, 62, 62, 0.781);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect: Zoom and Shadow */
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Carousel Styles */
+#carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+button.next {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+/* API Sections (Weather, Facebook, YouTube, Map) */
+.api-sections {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.api-section {
+  text-align: center;
+  background: #f4f4f4;
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Weather Section */
+.weather-info p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.weather-info img {
+  width: 50px;
+  height: 50px;
+}
+
+/* YouTube Section Fix */
+.youtube-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.youtube-video iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 8px;
+}
+
+/* Google Maps Styling */
+#map {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: 40px;
+}
+
+footer .social-media {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* NEWS PAGE STYLES */
+#news {
+  padding: 40px;
+  text-align: center;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.news-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.news-item h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.news-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+.news-item a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.news-item a:hover {
+  background: #555;
+}
+
+/* Hover Effect: Zoom and Shadow */
+.news-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FORM STYLES */
+#form-section {
+  width: 50%;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button Styling */
+button {
+  background: #333;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+button:hover {
+  background: #555;
+}
+
+/* Center Button Under Form */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the button */
+  margin-top: 20px; /* Space between form and button */
+}
+
+/* TABLE STYLES */
+#table-section {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #333;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  #form-section, #table-section {
+    width: 90%;
+  }
+}
+
