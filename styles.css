@@ -27,6 +27,11 @@ header nav ul li {
   margin: 0 15px;
 }
 
+#submit {
+  display:inline-block;
+  position:relative;
+}
+
 header nav ul li a {
   color: #fff;
   text-decoration: none;
